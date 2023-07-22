@@ -1,7 +1,7 @@
-<script>
-    let number = 0; 
+<script lang="ts">
+    let number: number = 0; 
 
-    function addButton() {
+    function addButton(): void {
         number += 1;
     }
 </script>
