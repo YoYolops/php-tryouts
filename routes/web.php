@@ -1,7 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Middleware\ValidateRegisterBody;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +20,4 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return Inertia::render('Home');
 });
+Route::get('register', function () { return Inertia::render("Register"); });
