@@ -13,8 +13,10 @@ class Session extends Model
     protected $table = "sessions";
     protected $primaryKey = "id";
 
-    public function user(): BelongsTo 
+    protected $fillable = ['token', 'user_id'];
+
+    public function user(): HasOne 
     {
-        return $this->belongsTo(User::class);
+        return $this->hasOne(User::class, "user_id");
     }
 }
