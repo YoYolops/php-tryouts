@@ -8,14 +8,9 @@
         password: "",
     }
 
-    function handleRegistration(e: Event): void {
-        e.preventDefault();
-
-    }
-
 </script>
 
-<form action="/register" method="POST">
+<form action="/api/register" method="POST">
     <div class="input_cell">
         <label for="name">Nome: </label>
         <input type="text" name="name" bind:value={registerData.name} required>

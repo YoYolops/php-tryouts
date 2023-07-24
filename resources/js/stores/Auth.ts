@@ -1,17 +1,30 @@
 import { writable } from "svelte/store";
-import { UserDTO } from "../dtos/Auth";
+import { LoginDTO, UserDTO } from "../dtos/Auth";
 import axios from "axios";
 
-axios.create({
-    baseURL: process.env.API_URL
+const API_URL = "http://localhost:8000/";
+const API = axios.create({
+    baseURL: API_URL,
+    headers: {
+        'Content-Type': 'application/json'
+    }
 })
 
-const userData = writable({
+let userData = writable({
     name: "",
     password: "",
-    email: ""
+    email: "",
+    token: ""
 })
 
-export function login(user: UserDTO): void {
+async function login(user: LoginDTO): Promise<LoginDTO> {
+    const loggedUser = await API.post("/api/login", { ...user });
+    userData = loggedUser.data;
+    console.log("Login returned: ", loggedUser.data)
+    return loggedUser.data;
+}
 
+export {
+    userData,
+    login
 }
