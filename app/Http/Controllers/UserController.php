@@ -22,6 +22,13 @@ class UserController extends Controller
             "password" => "required",
         ]);
 
+        if (auth()->attempt([
+            'email' => $incomingData['email'],
+            'password' => $incomingData['password'],
+        ])) {
+            $request->session()->regenerate();
+        }
+
         return $incomingData;
     }
 }
