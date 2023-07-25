@@ -1,26 +1,27 @@
-import { writable } from "svelte/store";
+import { writable, Writable } from "svelte/store";
+import { SessionDTO } from "../dtos/Auth";
 
-export const User = writable(getLocalStorageUserData());
+export const Session: Writable<SessionDTO> = writable(getLocalStorageUserData());
 
-export function updateUserData(newData) {
-    User.update(prev => {
+export function updateSessionData(newData) {
+    Session.update(prev => {
         const updatedData = {
             ...prev,
             ...newData
         }
-        updateLocalStoragedUserData(updatedData)
+        updateLocalStoragedSessionData(updatedData)
         return updatedData;
     })
-    return User;
+    return Session;
 }
 
 function getLocalStorageUserData() {
     console.log("GETTING USER DATA")
     const storagedUserData = JSON.parse(localStorage.getItem("userData") ?? "{}")
     console.log("Storaged data: ", storagedUserData)
-    return storagedUserData
+    return storagedUserData;
 }
 
-function updateLocalStoragedUserData(newUserData) {
+function updateLocalStoragedSessionData(newUserData) {
     localStorage.setItem("userData", JSON.stringify(newUserData))
 }

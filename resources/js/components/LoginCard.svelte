@@ -1,7 +1,7 @@
 <script lang="ts">
     import { LoginDTO } from "../dtos/Auth";
-    import { login } from "../stores/Auth";
-    import { updateUserData } from "../stores/Session";
+    import { login, Api } from "../stores/Api";
+    import { updateSessionData } from "../stores/Session";
     import { router } from "@inertiajs/svelte";
 
     let loginData: LoginDTO = {
@@ -11,8 +11,8 @@
 
     async function handleSubmit(e: Event): Promise<void> {
         e.preventDefault();
-        const responseData = await login(loginData);
-        updateUserData(responseData)
+        const sessionData = await login(loginData, $Api);
+        updateSessionData(sessionData);
         router.get("/tickets");
     }
 </script>

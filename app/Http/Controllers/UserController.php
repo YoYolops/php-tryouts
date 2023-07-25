@@ -11,6 +11,7 @@ use Ramsey\Uuid\Uuid;
 
 class UserController extends Controller
 {
+    // Verify if there is actually a user with informed email and password, returning its id, or 0.
     public function authenticateLoginCredentials($email, $password): int
     {
         $foundUser = User::firstWhere("email", $email);
