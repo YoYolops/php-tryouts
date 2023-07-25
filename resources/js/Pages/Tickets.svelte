@@ -18,5 +18,10 @@
 </script>
 
 <main>
-    essa é a pagina de tickets, você está logado
+    <p>voce esta logado, aproveite</p>
+    <ul>
+        <li>Minhas Rifas</li>
+        <li>Criar Sorteio</li>
+        <li>Listar sorteios</li>
+    </ul>
 </main>
