@@ -50,4 +50,8 @@ class UserController extends Controller
 
         return response("Invalid credentials", 404);
     }
+
+    public function getContests(Request $request) {
+        
+    }
 }

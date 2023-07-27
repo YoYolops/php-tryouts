@@ -11,6 +11,8 @@ class Contest extends Model
     protected $table = "contests";
     protected $primaryKey = "id";
 
+    protected $fillable = ['name', 'user_id', 'price', 'image'];
+
     public function user(): HasOne 
     {
         return $this->hasOne(User::class, "user_id");

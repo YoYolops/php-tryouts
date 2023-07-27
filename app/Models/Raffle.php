@@ -14,6 +14,8 @@ class Raffle extends Model
     protected $table = "raffles";
     protected $primaryKey = "id";
 
+    protected $fillable = ['user_id', 'contest_id'];
+
     public function user(): HasOne 
     {
         return $this->hasOne(User::class, "user_id");

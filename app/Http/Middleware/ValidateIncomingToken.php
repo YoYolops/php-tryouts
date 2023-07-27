@@ -18,7 +18,9 @@ class ValidateIncomingToken
     {
         $sessionData = SessionController::getSessionData($request->bearerToken());
         if($sessionData === null) return response("Invalid token provided", 401);
-        $request["sessionData"] = $sessionData;
+        $request["sessionData"] = $sessionData; 
         return $next($request);
     }
 }
+
+// sessionData has fields: token, id, userId, createdAt, updatedAt

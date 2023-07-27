@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('contests', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string("product_image_path");
+            $table->text("image");
             $table->foreignId("user_id")->constrained();
             $table->string("name");
+            $table->integer("price");
         });
     }
 
