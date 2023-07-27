@@ -7,9 +7,7 @@
 </script>
 
 <main>
-    <h1>
-        {isRegistration ? "Cadastro" : "Login"}
-    </h1>
+    <h1>{isRegistration ? "Cadastro" : "Login"}</h1>
 
     <div>        
         {#if isRegistration}

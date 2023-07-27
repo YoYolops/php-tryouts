@@ -3,6 +3,8 @@
     import Modal from "./generics/Modal.svelte";
     import { Api } from "../stores/Api";
     import { ContestDTO } from "../dtos/Contest";
+    import Input from "./generics/Input.svelte";
+    import Button from "./generics/Button.svelte";
 
     export let showModal = false;
     let contestData: ContestDTO = {
@@ -46,25 +48,33 @@
 
 <Modal bind:showModal>
     <form on:submit|preventDefault id="myForm">
-        <div class="input_cell">
-            <label for="name">Nome do Concurso:</label>
-            <input type="name" bind:value={contestData.name}/>
-        </div>
+        <Input 
+            label="Sorteio: "
+            name="name"
+            type="text"
+            bind:value={contestData.name}
+            required
+        />
 
         <div class="input_cell">
-            <label for="name">Imagem do produo sorteado:</label>
-            <input id="product_image" type="file" accept="image/*"/>
+            <label for="image">Imagem do produto sorteado:</label>
+            <input id="product_image" name="image" type="file" accept="image/*"/>
         </div>
 
-        <div class="input_cell">
-            <label for="name">Preço da rifa: </label>
-            <input type="number" bind:value={contestData.price} />
-        </div>
+        <Input 
+            label="Preço da Rifa: "
+            name="price"
+            type="number"
+            bind:value={contestData.price}
+            required
+        />
 
-        <button on:click={handleSubmit}>Cadastrar Concurso</button>
+        <Button onClick={handleSubmit}>Cadastrar Concurso</Button>
     </form>
 </Modal>
 
 <style>
-
+    .input_cell {
+        margin: 20px 0px;
+    }
 </style>

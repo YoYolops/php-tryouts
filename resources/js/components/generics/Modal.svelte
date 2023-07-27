@@ -11,12 +11,12 @@
 	on:close={() => (showModal = false)}
 	on:click|self={() => dialog.close()}
 >
+<button autofocus on:click={() => dialog.close()}>FECHAR</button>
 	<div on:click|stopPropagation>
 		<slot name="header" />
 		<hr />
 		<slot />
 		<hr />
-		<button autofocus on:click={() => dialog.close()}>close modal</button>
 	</div>
 </dialog>
 
@@ -57,5 +57,18 @@
 	}
 	button {
 		display: block;
+        color: #ae1a1a;
+        font-size: 1.1rem;
+        background-color: inherit;
+        border: none;
+        outline: none;
+        font-weight: 500;
+        text-decoration: underline;
+        padding-left: 15px;
+        padding-top: 10px;
 	}
+
+    button:hover {
+        cursor: pointer;
+    }
 </style>

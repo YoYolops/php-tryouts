@@ -37,5 +37,5 @@
         bind:value={loginData.password}
         type="password"
     />
-    <Button onClick={handleSubmit}>ENVIAR</Button>
+    <Button onClick={handleSubmit}>ENTRAR</Button>
 </form>

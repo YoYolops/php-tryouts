@@ -9,9 +9,9 @@
     </a>
 
     <nav class="navigation_container">
-        <a class="nav_item">Sobre</a>
-        <a class="nav_item">Entrar</a>
-        <a class="nav_item">Cadastrar</a>
+        <a href="/" class="nav_item">Sobre</a>
+        <a href="/" class="nav_item">Entrar</a>
+        <a href="/" class="nav_item">Cadastrar</a>
     </nav>
 </header>
 

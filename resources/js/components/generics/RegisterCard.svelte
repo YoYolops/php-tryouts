@@ -35,7 +35,7 @@
         required
     />
 
-    <Button onClick={() => {}}>ENVIAR</Button>
+    <Button onClick={() => {}}>CADASTRAR</Button>
 </form>
 
 <style>
