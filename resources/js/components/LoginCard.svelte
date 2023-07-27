@@ -28,5 +28,5 @@
         <input type="password" name="password" bind:value={loginData.password} required>
     </div>
 
-    <button type="submit" on:click={e => handleSubmit(e)}>ENVIAR</button>
+    <button type="submit" on:click={handleSubmit}>ENVIAR</button>
 </form>;

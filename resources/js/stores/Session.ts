@@ -22,6 +22,10 @@ function getLocalStorageUserData() {
     return storagedUserData;
 }
 
+export function resetLocallyStoragedData() {
+    localStorage.setItem("userData", JSON.stringify({}));
+}
+
 function updateLocalStoragedSessionData(newUserData) {
     localStorage.setItem("userData", JSON.stringify(newUserData))
 }

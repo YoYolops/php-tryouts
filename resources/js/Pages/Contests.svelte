@@ -1,5 +1,6 @@
 <script lang="ts">
     import { Api } from "../stores/Api";
+    import Init from "./Init.svelte";
 
     let contests;
 
@@ -12,12 +13,13 @@
 </script>
 
 
-<main>
-    {#if contests}
-        {#each contests as contest}
-            <img src={contest.image}>
-        {/each}  
-    {/if}
-
-</main>
+<Init>
+    <main>
+        {#if contests}
+            {#each contests as contest}
+                <img src={contest.image}>
+            {/each}  
+        {/if}
+    </main>
+</Init>
 

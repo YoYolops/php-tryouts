@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContestController;
+use App\Http\Controllers\SessionController;
 use App\Http\Middleware\ValidateRegisterBody;
 use App\Http\Middleware\ValidateIncomingToken;
 
@@ -24,6 +25,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post("/register", [UserController::class, "registerUser"])->middleware(ValidateRegisterBody::class);
 Route::post("/login", [UserController::class, "logUser"]);
+
+Route::get("/validate/session", [SessionController::class, "validateSession"]);
 
 Route::middleware([ValidateIncomingToken::class])->group(function () {
     Route::post("/contest", [ContestController::class, "createContest"]);
