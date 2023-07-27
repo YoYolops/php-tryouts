@@ -21,7 +21,6 @@ class ContestController extends Controller
         $validatedRequest['user_id'] = strip_tags($request['sessionData']['user_id']);
         $validatedRequest['price'] = strip_tags($request['price']);
 
-
         return Contest::create($validatedRequest);
     }
 

@@ -1,8 +1,5 @@
 <script lang="ts">
     import Init from "./Init.svelte";
-    import { Session } from "../stores/Session";
-    import { createApi, Api, updateApiConfig } from "../stores/Api";
-    import { router } from "@inertiajs/svelte";
     import CreateContestForm from "../components/CreateContestForm.svelte";
     import { inertia } from "@inertiajs/svelte";
 
