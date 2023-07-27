@@ -1,5 +1,6 @@
 <script lang="ts">
     import { UserDTO } from "../../dtos/Auth";
+    import Button from "./Button.svelte";
     import Input from "./Input.svelte";
 
     let registerData: UserDTO = {
@@ -34,7 +35,7 @@
         required
     />
 
-    <button type="submit">ENVIAR</button>
+    <Button onClick={() => {}}>ENVIAR</Button>
 </form>
 
 <style>

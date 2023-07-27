@@ -1,3 +1,7 @@
+:root {
+    --default-blue: #0ea6fe;
+}
+
 * {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;

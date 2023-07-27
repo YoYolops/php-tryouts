@@ -4,6 +4,7 @@
     import { updateSessionData } from "../../stores/Session";
     import { router } from "@inertiajs/svelte";
     import Input from "./Input.svelte";
+    import Button from "./Button.svelte";
 
     let loginData: LoginDTO = {
         email: "",
@@ -31,10 +32,10 @@
 
     <Input 
         name="senha"
-        label="Senha"
+        label="Senha: "
         required
         bind:value={loginData.password}
         type="password"
     />
-    <button type="submit" on:click={handleSubmit}>ENVIAR</button>
+    <Button onClick={handleSubmit}>ENVIAR</Button>
 </form>

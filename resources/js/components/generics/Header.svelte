@@ -3,15 +3,15 @@
 </script>
 
 <header>
-    <div class="icon_container">
+    <a href="/" class="icon_container">
         <GiTicket />
         <p>Tickets</p>
-    </div>
+    </a>
 
     <nav class="navigation_container">
-            <a class="nav_item">Sobre</a>
-            <a class="nav_item">Entrar</a>
-            <a class="nav_item">Cadastrar</a>
+        <a class="nav_item">Sobre</a>
+        <a class="nav_item">Entrar</a>
+        <a class="nav_item">Cadastrar</a>
     </nav>
 </header>
 
@@ -32,7 +32,7 @@
         bottom: 0;
         left: 0;
         z-index: -10;
-        background-color: #0ea6fe;
+        background-color: var(--default-blue);
         transform: skewY(-7deg);
         -webkit-transform-origin: 0;
         transform-origin: 0;

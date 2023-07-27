@@ -17,5 +17,30 @@
 </div>
 
 <style>
+    div {
+        margin-bottom: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    label {
+        font-size: 1rem;
+        font-weight: 700;
+        width: 30%;
+        background-color: var(--default-blue);
+        padding: 5px;
+        color: #fff;
+        border-radius: 3px 3px 0px 3px;
+    }
+
+    input {
+        width: 70%;
+        border: none;
+        padding: 5px;
+        border-bottom: 2px solid var(--default-blue);
+        outline-color: var(--default-blue);
+    }
 
 </style>
