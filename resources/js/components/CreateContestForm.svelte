@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import Modal from "./Modal.svelte";
+    import Modal from "./generics/Modal.svelte";
     import { Api } from "../stores/Api";
     import { ContestDTO } from "../dtos/Contest";
 
@@ -14,22 +14,22 @@
     onMount(() => {
         const imageInput = document.querySelector("#product_image");
         const fileReader = new FileReader();
-        let handleImageInputChange;
-        let handleFileImageLoad;
+        let handleImageInputChange: EventListener;
+        let handleFileImageLoad: EventListener;
 
         imageInput.addEventListener("change", handleImageInputChange = (e: Event) => {
             const imagePicker: HTMLInputElement | any = e.target;
             const file = imagePicker.files[0];
 
             fileReader.addEventListener("load", handleFileImageLoad = (e) => {
-                const readerTarget = e.target;
+                const readerTarget: EventTarget | any = e.target;
                 contestData.image = readerTarget.result;
             })
 
             fileReader.readAsDataURL(file)
         })
 
-        return () => {
+        return () => {// runs on destroy
             imageInput.removeEventListener("change", handleImageInputChange);
             fileReader.removeEventListener("load", handleFileImageLoad);
         }

@@ -1,10 +1,17 @@
 <script>
+    import { router } from "@inertiajs/svelte";
     import "../../css/app.css";
     import GenericButton from "../components/GenericButton.svelte";
     import LoginCard from "../components/LoginCard.svelte";
     import RegisterCard from "../components/RegisterCard.svelte";
+    import { Session } from "../stores/Session";
 
     let isRegistration = false;
+
+    void function init() {
+        // precisa verificar se, alem de existir, o token é válido
+        if($Session.token && $Session.token.length) router.get("/tickets");
+    }();
 </script>
 
 <main>

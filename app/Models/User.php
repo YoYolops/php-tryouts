@@ -52,3 +52,4 @@ class User extends Authenticatable
         return $this->hasMany(Contest::class, "user_id");
     }
 }
+    

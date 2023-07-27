@@ -27,4 +27,5 @@ Route::post("/login", [UserController::class, "logUser"]);
 
 Route::middleware([ValidateIncomingToken::class])->group(function () {
     Route::post("/contest", [ContestController::class, "createContest"]);
+    Route::get("/contest", [ContestController::class, "getAllUserContests"]);
 });

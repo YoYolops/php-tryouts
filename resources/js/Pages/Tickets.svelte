@@ -3,6 +3,7 @@
     import { createApi, Api, updateApiConfig } from "../stores/Api";
     import { router } from "@inertiajs/svelte";
     import CreateContestForm from "../components/CreateContestForm.svelte";
+    import { inertia } from "@inertiajs/svelte";
 
     void function init() {
         // Verifica se o usuario está logado, setando o token nos headers em caso afirmativo
@@ -29,4 +30,5 @@
 
     <CreateContestForm bind:showModal={showCreateContest}/>
     <button on:click={() => showCreateContest = !showCreateContest}>SHOW FORM</button>
+    <a href="/contests" use:inertia>Ver concursos</a>
 </main>

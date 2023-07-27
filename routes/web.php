@@ -22,3 +22,4 @@ Route::get('/', function () {
 });
 Route::get('/register', function () { return Inertia::render("Register"); });
 Route::get('/tickets', function () { return Inertia::render("Tickets"); });
+Route::get('/contests', function () { return Inertia::render("Contests"); });

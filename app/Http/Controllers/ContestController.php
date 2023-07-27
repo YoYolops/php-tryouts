@@ -25,15 +25,15 @@ class ContestController extends Controller
         return Contest::create($validatedRequest);
     }
 
-    public function getAllContests(Request $request) {
-        $user = User::firstWhere('id', $request['sessionData']['user_id']);
+    public function getAllUserContests(Request $request) {
+        $user = User::find($request['sessionData']['user_id']);
         if($user === null) throw new ErrorException("Could not find a user from session data provided in request");
-        return $user->contests();
+        return $user->contests;
     }
 
-    public function getAllRaffles(Request $request) {
+    public function getAllUserRaffles(Request $request) {
         $user = User::firstWhere('id', $request['sessionData']['user_id']);
         if($user === null) throw new ErrorException("Could not find a user from session data provided in request");
-        return $user->raffles();
+        return $user->raffles;
     }
 }
